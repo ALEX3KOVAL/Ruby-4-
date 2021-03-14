@@ -51,3 +51,11 @@ end
 if langprog == "C#" then
     puts "Что-то про C#" #комментарий про C#
 end
+
+#условный оператор 3
+print "Ваш любимый язык программирования: "
+langprog = gets.chomp
+puts "Подлиза!" if langprog == "Ruby"
+puts "Скоро будет Ruby!" if langprog == "C++" #комментарий про C++
+puts "Скоро будет Ruby!" if langprog == "Prolog" #комментарий про Prolog
+puts "Скоро будет Ruby!" if langprog == "C#" #комментарий про C#
