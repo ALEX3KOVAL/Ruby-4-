@@ -18,3 +18,20 @@ print "Добрый день, %s! Вам %d лет?" % ARGV
 
 #форматирование строки с использованием встроенного метода sprintf
 print sprintf "Здравствуйте, %-20s! Вам %10d лет?", ARGV[0],20
+
+=begin
+Задание 3
+=end
+
+#условный оператор 1
+print "Ваш любимый язык программирования: "
+langprog = gets.chomp
+if langprog == "Ruby" then
+    puts "Подлиза!" #комментарий про Ruby
+elsif langprog == "C++" then
+    puts "Что-то про C++" #комментарий про C++
+elsif langprog == "Prolog" then
+    puts "Логика понятна?" #комментарий про Prolog
+elsif langprog == "C#" then
+    puts "Что-то про C#" #комментарий про C#
+end
