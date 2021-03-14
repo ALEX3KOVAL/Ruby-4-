@@ -59,3 +59,17 @@ puts "Подлиза!" if langprog == "Ruby"
 puts "Скоро будет Ruby!" if langprog == "C++" #комментарий про C++
 puts "Скоро будет Ruby!" if langprog == "Prolog" #комментарий про Prolog
 puts "Скоро будет Ruby!" if langprog == "C#" #комментарий про C#
+
+#условный оператор 4
+podliza = Proc.new do print "Подлиза!" end
+ruby = Proc.new do print "Скоро будет Ruby!" end
+print "Ваш любимый язык программирования: "
+langprog = gets.chomp
+if langprog == "Ruby" #комментарий про Ruby
+then podliza.call
+elsif langprog == "C++" #комментарий про С++
+then ruby.call
+elsif langprog == "Prolog" #комментарий про Prolog
+then ruby.call
+elsif langprog == "C#" #комментарий про C#
+end
