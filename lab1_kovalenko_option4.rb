@@ -35,3 +35,19 @@ elsif langprog == "Prolog" then
 elsif langprog == "C#" then
     puts "Что-то про C#" #комментарий про C#
 end
+
+#условный оператор 2
+print "Ваш любимый язык программирования: "
+langprog = gets.chomp
+if langprog == "Ruby" then
+    puts "Подлиза!" #комментарий про Ruby
+end
+if langprog == "C++" then
+    puts "Что-то про C++" #комментарий про C++
+end
+if langprog == "Prolog" then
+    puts "Логика понятна?" #комментарий про Prolog
+end
+if langprog == "C#" then
+    puts "Что-то про C#" #комментарий про C#
+end
