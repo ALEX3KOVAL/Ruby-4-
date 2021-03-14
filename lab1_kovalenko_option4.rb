@@ -6,3 +6,12 @@ print "Hello world!"
 =end
 
 print "Здравствуйте, #{ARGV[0]}!"
+
+#получение наименований всех методов класса string
+print "".methods()
+
+
+
+
+
+
