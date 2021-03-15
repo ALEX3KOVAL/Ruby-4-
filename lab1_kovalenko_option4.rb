@@ -73,3 +73,19 @@ elsif langprog == "Prolog" #комментарий про Prolog
 then ruby.call
 elsif langprog == "C#" #комментарий про C#
 end
+
+#условный оператор 5
+print "Ваш любимый язык программирования: "
+langprog = gets.chomp
+unless langprog != "Ruby" then
+		print "Подлиза!" #комментарий про Ruby
+end
+unless langprog != "C++" then
+	print "Скоро будет Ruby c++!" #комментарий про C++
+end
+unless langprog != "Prolog" then
+	print "Скоро будет Ruby prolog!" #комментарий про Prolog
+end
+unless langprog != "C#" then
+	print "Скоро будет Ruby c#!" #комментарий про C#
+end
