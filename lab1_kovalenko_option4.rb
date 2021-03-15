@@ -81,11 +81,28 @@ unless langprog != "Ruby" then
 		print "Подлиза!" #комментарий про Ruby
 end
 unless langprog != "C++" then
-	print "Скоро будет Ruby c++!" #комментарий про C++
+	print "Скоро будет Ruby!" #комментарий про C++
 end
 unless langprog != "Prolog" then
-	print "Скоро будет Ruby prolog!" #комментарий про Prolog
+	print "Скоро будет Ruby!" #комментарий про Prolog
 end
 unless langprog != "C#" then
-	print "Скоро будет Ruby c#!" #комментарий про C#
+	print "Скоро будет Ruby!" #комментарий про C#
+end
+
+#условный оператор 6
+print "Ваш любимый язык программирования: "
+langprog = gets.chomp
+unless langprog != "Ruby" then
+	print "Подлиза!" #комментарий про Ruby
+else
+	unless langprog != "C++" then
+		print "Скоро будет Ruby!" #комментарий про C++
+	else
+		unless langprog != "Prolog" then
+			print "Скоро будет Ruby!" #комментарий про Prolog
+		else
+			print "Скоро будет Ruby!" #комментарий про C#
+		end
+	end
 end
