@@ -139,17 +139,3 @@ end
 print "Ваш любимый язык программирования: "
 langprog = gets.chomp
 puts langprog == "Ruby" ? "Подлиза!" : "Скоро будет Ruby!"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
