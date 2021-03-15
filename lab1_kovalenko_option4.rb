@@ -166,8 +166,10 @@ system("irb")
 print "Введите команду OS: "
 system(gets.chomp)
 
-
-
+#принятие элементов массива 
+ARGV.each do |arg|
+	puts arg.split('').map(&:to_i).inject(0){|sum, x| sum + x}
+end
 
 
 
