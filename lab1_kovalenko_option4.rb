@@ -72,6 +72,7 @@ then ruby.call
 elsif langprog == "Prolog" #комментарий про Prolog
 then ruby.call
 elsif langprog == "C#" #комментарий про C#
+then ruby.call
 end
 
 #условный оператор 5
@@ -114,3 +115,39 @@ print "Подлиза!" unless langprog != "Ruby"
 print "Скоро будет Ruby!" unless langprog != "C++" #комментарий про C++
 print "Скоро будет Ruby!" unless langprog != "Prolog" #комментарий про Prolog
 print "Скоро будет Ruby!" unless langprog != "C#" #комментарий про C#
+
+#условный оператор 8
+podliza = Proc.new do print "Подлиза!" end
+ruby = Proc.new do print "Скоро будет Ruby!" end
+print "Ваш любимый язык программирования: "
+langprog = gets.chomp
+unless langprog != "Ruby" then
+	podliza.call #комментарий про Ruby
+else
+	unless langprog != "C++" then
+		ruby.call #комментарий про C++
+	else
+		unless langprog != "Prolog" then
+			ruby.call #комментарий про Prolog
+		else
+			ruby.call #комментарий про C#
+		end
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
