@@ -153,3 +153,22 @@ when "Prolog"
 when "C#"
 	puts "Скоро будет Ruby!" #комментарий для C#
 end
+
+=begin
+Задание 4
+=end
+
+#введение команды Ruby в irb
+print "Введите команду Ruby (перед этим войдите в irb, нажав на Enter): "
+gets
+system("irb")
+#введение команды ОС 
+print "Введите команду OS: "
+system(gets.chomp)
+
+
+
+
+
+
+
