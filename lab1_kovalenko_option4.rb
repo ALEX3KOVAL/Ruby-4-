@@ -139,3 +139,17 @@ end
 print "Ваш любимый язык программирования: "
 langprog = gets.chomp
 puts langprog == "Ruby" ? "Подлиза!" : "Скоро будет Ruby!"
+
+#оператор выбора case
+print "Ваш любимый язык программирования: "
+langprog = gets.chomp
+case langprog
+when "Ruby"
+	puts "Подлиза!"
+when "C++"
+	puts "Скоро будет Ruby!" #комментарий для C++
+when "Prolog"
+	puts "Скоро будет Ruby!" #комментарий для Prolog
+when "C#"
+	puts "Скоро будет Ruby!" #комментарий для C#
+end
