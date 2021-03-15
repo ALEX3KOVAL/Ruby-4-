@@ -106,3 +106,11 @@ else
 		end
 	end
 end
+
+#условный оператор 7
+print "Ваш любимый язык программирования: "
+langprog = gets.chomp
+print "Подлиза!" unless langprog != "Ruby"
+print "Скоро будет Ruby!" unless langprog != "C++" #комментарий про C++
+print "Скоро будет Ruby!" unless langprog != "Prolog" #комментарий про Prolog
+print "Скоро будет Ruby!" unless langprog != "C#" #комментарий про C#
