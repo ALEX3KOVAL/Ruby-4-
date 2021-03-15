@@ -135,8 +135,10 @@ else
 	end
 end
 
-
-
+#условный оператор 9
+print "Ваш любимый язык программирования: "
+langprog = gets.chomp
+puts langprog == "Ruby" ? "Подлиза!" : "Скоро будет Ruby!"
 
 
 
