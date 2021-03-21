@@ -166,11 +166,7 @@ system("irb")
 print "Введите команду OS: "
 system(gets.chomp)
 
-#принятие элементов массива 
-ARGV.each do |arg|
-	puts arg.split('').map(&:to_i).inject(0){|sum, x| sum + x}
-end
-
-
-
-
+#введение команды Ruby в cmd с интепретированием фрагментов кода в ходе выполнения статически написанной программы
+print "Введите команду Ruby: "
+ruby_command = gets.chomp
+print eval %[#{ruby_command}]
