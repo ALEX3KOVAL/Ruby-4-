@@ -178,3 +178,33 @@ print eval %[#{ruby_command}]
 ARGV.each do |arg|
 	print arg.split('').map(&:to_i).inject(0){|sum, x| sum + x}
 end
+
+=begin
+Задание 6 
+=end
+ 
+def sum_of_digits 
+	ARGV[0].split('').map(&:to_i).inject(0){|sum, x| sum + x} 
+end 
+ 
+def max_digit 
+	ARGV[0].split('').map(&:to_i).max 
+end 
+ 
+def min_digit 
+	min = ARGV[0][0].to_i 
+	for i in (1...ARGV[0].length) 
+		elem = ARGV[0][i].to_i 
+		min = elem < min ? elem : min 
+	end 
+	min 
+end 
+ 
+def comp_of_digits 
+	ARGV[0].split('').map(&:to_i).inject(1){|comp, x| comp * x} 
+end 
+ 
+puts "Сумма цифр числа #{ARGV[0]} равна: #{sum_of_digits}" 
+puts "Произведение цифр числа #{ARGV[0]} равно #{comp_of_digits}" 
+puts "Максимальная цифра числа #{ARGV[0]} равна: #{max_digit}" 
+puts "Минимальная цифра числа #{ARGV[0]} равна: #{min_digit}"
