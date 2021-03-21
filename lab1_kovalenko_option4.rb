@@ -183,28 +183,107 @@ end
 Задание 6 
 =end
  
-def sum_of_digits 
-	ARGV[0].split('').map(&:to_i).inject(0){|sum, x| sum + x} 
+def sum_of_digits number
+	number.split('').map(&:to_i).inject(0){|sum, x| sum + x} 
 end 
  
-def max_digit 
-	ARGV[0].split('').map(&:to_i).max 
+def max_digit number
+	number.split('').map(&:to_i).max 
 end 
  
-def min_digit 
-	min = ARGV[0][0].to_i 
-	for i in (1...ARGV[0].length) 
-		elem = ARGV[0][i].to_i 
+def min_digit number
+	min = number[0].to_i 
+	for i in (1...number.length) 
+		elem = number[i].to_i 
 		min = elem < min ? elem : min 
 	end 
 	min 
 end 
  
-def comp_of_digits 
-	ARGV[0].split('').map(&:to_i).inject(1){|comp, x| comp * x} 
+def comp_of_digits number
+	number.split('').map(&:to_i).inject(1){|comp, x| comp * x} 
 end 
  
-puts "Сумма цифр числа #{ARGV[0]} равна: #{sum_of_digits}" 
-puts "Произведение цифр числа #{ARGV[0]} равно #{comp_of_digits}" 
-puts "Максимальная цифра числа #{ARGV[0]} равна: #{max_digit}" 
-puts "Минимальная цифра числа #{ARGV[0]} равна: #{min_digit}"
+puts "Сумма цифр числа #{ARGV[0]} равна: #{sum_of_digits number}" 
+puts "Произведение цифр числа #{ARGV[0]} равно #{comp_of_digits number}" 
+puts "Максимальная цифра числа #{ARGV[0]} равна: #{max_digit number}" 
+puts "Минимальная цифра числа #{ARGV[0]} равна: #{min_digit number}"
+
+=begin
+Задание 7
+=end
+
+$gen_divi = lambda { |num1, num2|
+	for divider in (2..num2)
+			if num1 % divider == 0 && num2 % divider == 0 then
+				return true
+			end
+	end
+	return false }
+
+def check number1, number2
+	$gen_divi.call(number1, number2)
+end
+
+def even_non_coprime_numbers number
+	counter = 0
+	return 0 if number == 1.abs || number == 0
+	2.step(number.to_i-1, 2) { |num| counter += 1 if check(number, num) == true}
+	counter
+end
+
+number = ARGV[0]
+
+def max_digit_non_multiple3 number
+	number.split('').map(&:to_i).select {|elem| elem % 3 != 0}.max
+end
+
+def min_o_d number
+	for divider in (2..number)
+		return divider if number % divider == 0 
+	end
+end
+
+def max_non_coprime_number number
+	minod = min_o_d number
+	max = 0
+	left = minod + 1
+	for elem in (left..number)
+		if check(number, elem) == true && elem > max && elem % minod != 0 then
+			max = elem
+			puts max
+		end
+	end
+	puts "Максимальное число невзаимно простое с #{number} и некратное его наименьшему делителю #{minod} равно: #{max}"
+	max
+end
+
+def sum_of_digits_smaller5 number
+	sum = number.split('').map(&:to_i).select { |dig| dig < 5 }.inject { |res, elem| res + elem }
+	puts "Сумма цифр числа #{number}, меньших 5 равна: #{sum}"
+	sum
+end
+
+
+if ARGV.length == 0
+	puts "Hello World!"
+else
+	arg = ARGV[1].to_i
+	number = ARGV[0]
+	case arg
+		when 1
+			puts "Сумма цифр числа #{ARGV[0]} равна: #{sum_of_digits number}"
+		when 2
+			puts "Максимальная цифра числа #{ARGV[0]} равна: #{max_digit number}"
+		when 3
+			puts "Минимальная цифра числа #{ARGV[0]} равна: #{min_digit number}"
+		when 4
+			puts "Произведение цифр числа #{ARGV[0]} равно #{comp_of_digits number}"
+		when 5
+			puts "Количество чётных чисел невзаимно простых с #{ARGV[0]} равно: #{even_non_coprime_numbers number.to_i}"
+		when 6 
+			puts "Максимальная цифра числа #{number}, которая некратна 3 равна: #{max_digit_non_multiple3 number}"
+		when 7
+			puts "Результатом 7 метода при аргументе #{number} является: #{sum_of_digits_smaller5(number) * max_non_coprime_number(number.to_i)}"
+	end
+end
