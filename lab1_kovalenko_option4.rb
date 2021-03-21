@@ -170,3 +170,11 @@ system(gets.chomp)
 print "Введите команду Ruby: "
 ruby_command = gets.chomp
 print eval %[#{ruby_command}]
+
+=begin
+Задание 5
+=end
+		
+ARGV.each do |arg|
+	print arg.split('').map(&:to_i).inject(0){|sum, x| sum + x}
+end
