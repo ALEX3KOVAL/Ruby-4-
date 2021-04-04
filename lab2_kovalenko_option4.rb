@@ -122,7 +122,7 @@ end
 print read_from_file("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/')).max
 
 =begin
-Задание 9
+Задание 9(4)
 =end
 
 def check_polindrom(str)
@@ -131,3 +131,13 @@ def check_polindrom(str)
 end
 
 print check_polindrom(gets.chomp)
+
+=begin
+Задание 9(11)
+=end
+
+def count(str)
+	str.split.length
+end
+
+print count(gets.chomp)
