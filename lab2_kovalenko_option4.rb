@@ -93,3 +93,24 @@ def read_from_file(path)
 end
 
 print read_from_file("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/'))
+
+=begin
+Задание 5
+=end
+
+def info
+	puts "В программу необходимо передавать один параметр. Варианты параметров:\nx1_x2_x3_..._xn - z ввод элементов будущего списка, разделённых вертикальной чертой;\n'C:\\\\' - пользователем вводится некоторый путь к файлу, из которого требуется считать список."
+end
+
+if ARGV.length == 0
+	puts "Вы не ввели ни одного параметра. Предоставляю вам справочные данные:\n"
+	info
+elsif ARGV.length == 1
+	print ARGV[0]
+	if ARGV[0].include?('\\') == true
+		print read_from_file(ARGV[0].gsub('\\', '/'))
+	else print ARGV[0].split('_')
+	end
+else puts "Параметров не может быть более двух. Предоставляю вам справочные данные:\n"
+	info
+end
