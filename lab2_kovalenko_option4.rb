@@ -114,3 +114,15 @@ elsif ARGV.length == 1
 else puts "Параметров не может быть более двух. Предоставляю вам справочные данные:\n"
 	info
 end
+
+=begin
+Задание 6(4)
+=end
+
+res = ""
+list = read_from_file("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/'))
+list.sort_by {|elem| -elem}.each do |elem|
+	res = res + list.index(elem).to_s + "-"
+end
+print "#{list}\n"
+print res[...-1]
