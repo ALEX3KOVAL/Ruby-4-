@@ -80,3 +80,16 @@ print arr
 #5 способ добавления элемента в массив: используя метод insert класса Array
 arr.insert(4, 'четвертий елемент')
 print arr
+
+=begin
+Задание 4
+=end
+
+def read_from_file(path)
+	if File.exist?(path)
+		File.new(path, "r:UTF-8").read
+	else "Файл, с указанным путем #{path} не существует!"
+	end
+end
+
+print read_from_file("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/'))
