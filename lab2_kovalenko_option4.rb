@@ -87,7 +87,7 @@ print arr
 
 def read_from_file(path)
 	if File.exist?(path)
-		File.new(path, "r:UTF-8").read.split()
+		File.new(path, "r:UTF-8").read.split().map(&:to_i)
 	else "Файл, с указанным путем #{path} не существует!"
 	end
 end
@@ -134,3 +134,16 @@ print res[...-1]
 list = read_from_file("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/'))
 list_max = list.max(2)
 print list[list.index(list_max[1]) + 1...list.index(list_max[0])]
+
+=begin
+Задание 6(28)
+=end
+
+list = read_from_file("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/'))
+print "#{list}\n"
+max = list.index(list.max)
+min = list.index(list.min)
+if max > min
+	print list[min + 1...max]
+else print list[max + 1...min]
+end
