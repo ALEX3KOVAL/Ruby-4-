@@ -125,27 +125,35 @@ print read_from_file("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/')).max
 Задание 9(4)
 =end
 
-def check_polindrom(str)
-	return true if str.reverse() == str
-	false
+def ex_4()
+	print "Введите строку: "
+	str = gets.chomp
+	if str.reverse() == str
+		print "#{str} является палиндромом!\n"
+	else print "#{str} не является палиндромом!\n"
+	end
 end
 
-print check_polindrom(gets.chomp)
 
 =begin
 Задание 9(11)
 =end
-
-def count(str)
-	str.split.length
+def ex_11()
+	print "Введите строку -- "
+	print "Количество слов в строке равно -- #{gets.chomp.split.length}\n"
 end
 
-print count(gets.chomp)
 
 =begin
 Задание 15
 =end
 
-def count_of_dig(num)
-	num.to_s.length
+def ex_15()
+	print "Введите число -- "
+	print "Количество цифр в числе равно -- #{gets.chomp.to_i.to_s.length}\n"
 end
+
+print "Под какими номерами(ом) задачи(а), решение которых вы бы хотели увидеть? \nВведите строку в формате num1_num2 или просто num, если хотите увидеть решение одной задачи: "
+gets.chomp.split('_').each { |elem|
+	eval("ex_#{elem}")
+}
