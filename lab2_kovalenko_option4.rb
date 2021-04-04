@@ -155,3 +155,30 @@ end
 list = read_from_file("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/'))
 print "#{list}\n"
 print list.select {|elem| elem % 2 == 0}.min
+
+=begin
+Задание 6(52)	
+=end
+
+def prime_check num
+	(2...num).each do |elem|
+		return false if num % elem == 0
+	end
+	false if num == 1
+	true
+end
+
+def calc_multipliers num
+	multipliers = []
+	(2...num).each do |elem|
+		if prime_check(elem) == true
+			while num % elem == 0 && num > 1
+				num /= elem
+				multipliers << elem
+			end
+		end
+	end
+	multipliers
+end
+print "Введиет число: "
+print calc_multipliers(gets.chomp.to_i)
