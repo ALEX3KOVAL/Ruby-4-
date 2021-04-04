@@ -147,3 +147,11 @@ if max > min
 	print list[min + 1...max]
 else print list[max + 1...min]
 end
+
+=begin
+ Задание 6(40)
+=end
+
+list = read_from_file("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/'))
+print "#{list}\n"
+print list.select {|elem| elem % 2 == 0}.min
