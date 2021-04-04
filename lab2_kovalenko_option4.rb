@@ -87,7 +87,7 @@ print arr
 
 def read_from_file(path)
 	if File.exist?(path)
-		File.new(path, "r:UTF-8").read
+		File.new(path, "r:UTF-8").read.split()
 	else "Файл, с указанным путем #{path} не существует!"
 	end
 end
