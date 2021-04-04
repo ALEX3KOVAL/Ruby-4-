@@ -120,3 +120,14 @@ end
 =end
 
 print read_from_file("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/')).max
+
+=begin
+Задание 9
+=end
+
+def check_polindrom(str)
+	true if str.reverse() == str
+	false
+end
+
+print check_polindrom(gets.chomp)
