@@ -133,7 +133,10 @@ print res[...-1]
 
 list = read_from_file("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/'))
 list_max = list.max(2)
-print list[list.index(list_max[1]) + 1...list.index(list_max[0])]
+if list.index(list_max[0]) > list.index(list_max[1])
+	print list[list.index(list_max[1]) + 1...list.index(list_max[0])]
+else print list[list.index(list_max[0]) + 1...list.index(list_max[1])]
+end
 
 =begin
 Задание 6(28)
