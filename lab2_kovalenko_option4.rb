@@ -141,3 +141,11 @@ def count(str)
 end
 
 print count(gets.chomp)
+
+=begin
+Задание 15
+=end
+
+def count_of_dig(num)
+	num.to_s.length
+end
