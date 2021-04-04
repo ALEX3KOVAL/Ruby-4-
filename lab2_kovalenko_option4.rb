@@ -182,3 +182,9 @@ def calc_multipliers num
 end
 print "Введиет число: "
 print calc_multipliers(gets.chomp.to_i)
+
+=begin
+Задание 8
+=end
+
+print read_from_file("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/')).max
