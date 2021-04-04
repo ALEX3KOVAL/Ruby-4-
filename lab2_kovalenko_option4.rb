@@ -41,3 +41,21 @@ lt = gets.chomp.split.map! {|elem| elem.to_i}
 
 puts "Сумма всех элементов списка -- #{new_summ_of_elements(lt)}"
 print "Произведение всех элементов списка -- #{new_product_of_elements(lt)}"
+
+=begin
+Задание 3
+=end
+
+#Ввод массива с клавиатуры размером, переданным в ARGV
+def input()
+	arr = []
+	n = ARGV[0].to_i
+	puts "Введите элементы:"
+	ARGV.clear
+	n.times do 
+		arr << gets.chomp
+	end
+	print arr
+end
+
+input()
