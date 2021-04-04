@@ -126,3 +126,11 @@ list.sort_by {|elem| -elem}.each do |elem|
 end
 print "#{list}\n"
 print res[...-1]
+
+=begin
+Задание 6(16)
+=end
+
+list = read_from_file("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/'))
+list_max = list.max(2)
+print list[list.index(list_max[1]) + 1...list.index(list_max[0])]
