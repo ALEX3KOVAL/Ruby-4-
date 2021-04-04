@@ -126,7 +126,7 @@ print read_from_file("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/')).max
 =end
 
 def check_polindrom(str)
-	true if str.reverse() == str
+	return true if str.reverse() == str
 	false
 end
 
