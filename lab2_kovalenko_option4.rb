@@ -177,3 +177,22 @@ def read_from_file_lines(path)
 end
 
 puts read_from_file_lines("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/')).sort_by {|elem| elem.split.length}
+
+=begin
+Задание 14
+=end
+
+$my_lambda = lambda { |arg|
+		count = 0
+		arg.each do |elem|
+			begin
+				Integer(elem)
+				count = 0
+			rescue
+				count += 1
+			end
+		end
+		count	
+	}
+
+puts read_from_file_lines("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/')).sort_by {|elem| $my_lambda.call(elem.split)}
