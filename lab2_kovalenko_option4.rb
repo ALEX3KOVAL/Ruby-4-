@@ -164,3 +164,16 @@ gets.chomp.split('_').each { |elem|
 
 reg = /(((^([1-2][0-9]){1}\s|^([3][0-1]){1}\s|^([1-9]){1}\s|^([0][1-9]){1}\s)((январ|июл|апрел|июн|сентябр|октябр|ноябр|декабр)(ь|я){1}\s|(март|август)(а)?\s)|(^([1-2][0-9]){1}\s|^([1-9]){1}\s|^([0][1-9]){1}\s)(феврал(ь|я){1}\s))([12][90][0-9][0-9]){1}$)/
 puts "31 февраль 2020" =~ reg ? "Строка является корректной" : "Строка НЕ является корректной" # => Строка НЕ является корректной
+
+=begin
+Задание 13
+=end
+
+def read_from_file_lines(path)
+	if File.exist?(path)
+		File.new(path, "r:UTF-8").readlines.each do |line| line.chomp! end
+	else "Файл, с указанным путем #{path} не существует!"
+	end
+end
+
+puts read_from_file_lines("C:\\Users\\User\\Desktop\\file.txt".gsub!('\\','/')).sort_by {|elem| elem.split.length}
